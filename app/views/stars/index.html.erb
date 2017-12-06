@@ -1,0 +1,22 @@
+<%= link_to "New email", new_star_path %>
+<table border="1" >
+  <tr>
+    <th>Name</th>
+    <th>Email</th>
+      <thcolspan = "3"></th>
+    </tr>
+
+    <tbody>
+      <% @stars.each do |star| %>
+      <tr>
+        <td><%= star.name %></td>
+        <td><%= star.email %></td>
+
+        <td><%= link_to "Show", star %></td>
+        <td><%= link_to "Edit", edit_star_path(star) %></td>
+        <td><%= link_to "Destroy", star, method: :delete %></td>
+      </tr>
+
+      <% end %>
+    </tbody>
+  </table>
